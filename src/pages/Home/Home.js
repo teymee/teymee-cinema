@@ -57,7 +57,6 @@ function Home() {
       const randomColor = Math.floor(Math.random() * theme.length - 1);
       setTheme(theme[randomColor]);
     });
-    
   }, [title]);
 
 
