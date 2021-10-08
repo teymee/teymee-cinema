@@ -1,0 +1,33 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin: var(--margin);
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 5%;
+    margin-left: 5%;
+    color: ghostwhite;
+    
+}
+
+.menu{
+    list-style: none;
+    display: inline;
+}
+
+.footer li{
+    display: inline;
+    padding: 20px;
+    font-size: var(--navFont);
+}
+
+.footer a{
+    color: ghostwhite;
+    text-decoration: none;
+}

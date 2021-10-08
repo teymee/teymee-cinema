@@ -1,0 +1,156 @@
+.cast-list {
+  position: absolute;
+  bottom: 0 !important;
+  width: 100%;
+  background: linear-gradient(360deg, black, rgba(0, 0, 0, 0.01));
+  animation: exa linear 0.73s;
+}
+
+.cancel {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px !important;
+  height: 20px;
+  background-color: transparent;
+  color: red;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes exa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+.cast-list h2 {
+  font-size: 35px;
+  font-weight: lighter;
+  margin-bottom: -30px;
+  padding-left: 40px;
+}
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.cast-list .slick-slide {
+  margin: 0 -40px !important;
+}
+.cast {
+  width: 200px;
+  height: 276px;
+  border-radius: 10px;
+  transition: transform ease 1s;
+  display: inline-block;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  cursor: pointer;
+  animation: exa 2s ease;
+}
+
+.cast:hover {
+  transform: scale(1.15);
+}
+
+.cast::after {
+  content: " ";
+  background: linear-gradient(0deg, rgba(76, 68, 65, 0), rgba(141, 54, 22, 0));
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.cast:hover::after {
+  content: " ";
+  display: none;
+  padding: 20px;
+}
+
+.cast-list li {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.cast-details {
+  padding: 20px 0px 20px 20px;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  width: 90%;
+  background: linear-gradient(360deg, #00000060, rgba(0, 0, 0, 0.05));
+  border-radius: 9px;
+}
+
+.cast-details h3 {
+  font-weight: lighter;
+  font-size: 30px;
+}
+
+.mobile-cast-name {
+  display: none;
+}
+
+@media screen and (max-width: 1500px) {
+  .cast {
+    width: 165px;
+    height: 230px;
+  }
+ 
+
+  .cast-details h3 {
+    
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .cast {
+    width: 76px;
+    height: 80px;
+    border-radius: 50%;
+  }
+
+  .cancel,
+  .cast-details {
+    display: none;
+  }
+  
+  .cast-list .slick-slide {
+    margin: 0 -105px !important;
+  }
+
+  .cast-list {
+    bottom: 0 !important;
+    width: 100%;
+    background: transparent;
+    position: relative;
+    background-color: ghostwhite;
+  }
+  .cast-list h2 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .mobile-cast-name {
+    display: block;
+    justify-content: center;
+  }
+
+  .mobile-cast-name p {
+    display: block;
+    text-align: left;
+  }
+}
+

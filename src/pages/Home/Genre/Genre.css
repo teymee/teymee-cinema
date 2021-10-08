@@ -1,0 +1,92 @@
+.genre:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  border-radius: 25px;
+}
+
+.genre-list {
+  animation: genre 2s ease-in 4s forwards ;
+ 
+}
+
+@keyframes genre {
+  0% {
+    opacity:0;
+  }
+ 
+  100% {
+    opacity:1;
+  }
+}
+
+.genre {
+  color: white;
+  font-size: 12px;
+  display: inline;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+  transition: 0.6s ease;
+}
+
+.genre-list {
+  width: 70% !important;
+  padding: var(--margin);
+  margin-bottom: -40px;
+  opacity:0;
+  padding: 15px 0px 15px 0px;
+  position: absolute;
+  bottom: 45%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.list {
+  display: inline;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 1;
+}
+
+.slick-slide {
+  margin: 0 -16px;
+}
+
+
+
+@media screen and (max-width: 470px) {
+  .genre-list {
+    margin-bottom: -20px;
+    bottom: 270px !important;
+  }
+}
+
+@media only screen and  (max-width: 550px) {
+  .genre-list {
+    margin-bottom: -20px;
+    bottom: 250px;
+  }
+
+  .genre-list .slick-slide {
+    margin: 0 -20px;
+  }
+}
+
+@media only screen and  (max-width: 768px) {
+    .genre-list {
+        margin-bottom: -20px;
+        bottom: 370px;
+      }
+
+      .genre-list .slick-slide {
+        margin: 0 -20px;
+      }
+    
+}
+
+/* @media only screen and  (max-width: 1025px) {
+  .genre-list {
+    margin-bottom: -20px;
+    bottom: 70px;
+  }
+} */

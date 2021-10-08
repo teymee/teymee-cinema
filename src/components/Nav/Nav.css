@@ -1,0 +1,153 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: ghostwhite;
+  background-color: transparent;
+}
+
+.navcover {
+  width: 100%;
+  /* border-bottom: 1px #80808060 solid; */
+  padding-bottom: 25px;
+  z-index: 9999 !important;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav li {
+  display: inline;
+  padding: 20px;
+  font-size: var(--navFont);
+}
+
+.nav a {
+  color: ghostwhite;
+  text-decoration: none;
+}
+
+.nav input {
+  padding: 5px;
+  padding-right: 10px;
+  border: none;
+  background-color: #efedf7;
+  outline: none;
+}
+.nav img {
+  width: 90px;
+  height: 30px;
+}
+
+.box {
+  padding: 3px 15px;
+  background-color: #efedf7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+
+.box button{
+    border: none;
+    color: #88558f;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 20px;
+  height: 1px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: ghostwhite;
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 760px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu {
+    position: absolute;
+    left: -100%;
+    top: 90px;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    z-index: 1 !important;
+  }
+
+  .menu.active2 {
+    left: 0;
+  }
+
+  .menu.active2 li {
+    display: block;
+    z-index: 999 !important;
+    font-size: 10px !important;
+  }
+
+  .hamburger.active2 .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active2 .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active2 .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  form{
+    padding-bottom: 30px;
+  }
+  .box {
+    padding: 2px 7px;
+  }
+
+  .nav input {
+    width: 100px;
+    height: 10px;
+  }
+
+  .nav img {
+    width: 50px;
+    height: 20px;
+  }
+  
+}
+
+@media screen and (max-width: 1500px) {
+  .nav li {
+    font-size: 12.5px;
+  }
+
+  .box {
+    padding: 5px 15px;
+  }
+
+  .nav input {
+    width: 90px;
+    height: 10px;
+  }
+}
+

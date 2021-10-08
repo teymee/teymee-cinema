@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,300&family=Libre+Franklin:wght@300&display=swap');
+
+
+.subtext{
+    width:100%;
+   
+    text-align:center;
+    display: inline-block;
+    padding-top: 100px;
+    color: white;
+}
+
+.subtext h3{
+    font-size: 55px ;
+    font-weight: lighter;
+    font-family: 'Arvo', serif !important;
+}
+
+.subtext h4{
+    font-size: 30px;
+    font-weight: lighter;
+    padding: 10px 30px;
+ 
+}
+
+.subtext{
+    animation: subtext 1.5s ease-in 3.5s forwards ;
+    opacity:0;
+  }
+  
+  @keyframes subtext {
+    0% {
+      opacity:0;
+    }
+   
+    100% {
+      opacity:1;
+    }
+  }
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 550px) {
+
+  .subtext{
+    margin-top: 20%;
+  }
+    .subtext h4{
+        font-size: 20px;
+    } 
+
+    .subtext h3{
+        font-size: 19px;
+    } 
+}

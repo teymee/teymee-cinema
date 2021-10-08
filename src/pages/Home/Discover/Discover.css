@@ -1,0 +1,113 @@
+.discover-list {
+  animation: discover 1.5s ease-in 1s forwards;
+}
+
+@keyframes discover {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.discover-list li {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.discover-list {
+  width: 100%;
+  position: absolute !important;
+  bottom: 0px;
+  opacity: 0;
+}
+
+.discover-list .slick-slide {
+  margin: 0 -60px;
+}
+
+.discover {
+  width: 155px;
+  height: 230px;
+  border-radius: 10px;
+  transition: transform ease 1s;
+  display: inline-block;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.discover:hover {
+  transform: scale(1.15);
+}
+
+.discover::after {
+  content: " ";
+  background: linear-gradient(
+    0deg,
+    rgba(76, 68, 65, 0),
+    rgba(141, 54, 22, 0.1)
+  );
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.discover:hover::after {
+  content: " ";
+  display: none;
+}
+
+
+@media screen and (max-width: 1500px) {
+  .discover-list .slick-slide {
+    padding-right: -1002px !important;
+    padding-left: -1002px !important;
+  }
+
+  .discover {
+    width: 118px;
+    height: 190px;
+    
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 470px) {
+  .discover-list .slick-slide {
+    margin: 0 20px !important;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .discover-list .slick-slide {
+    margin: 0 30px;
+  }
+
+  .discover {
+    width: 100px !important;
+    height: 150px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .discover-list .slick-slide {
+    margin: 0 25px;
+  }
+}
+
+@media only screen and (min-width: 790px) and (max-width: 1400px) {
+  .discover-list .slick-slide {
+    margin: 0 -10px !important;
+  }
+}
+
+
