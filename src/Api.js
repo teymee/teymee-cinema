@@ -99,7 +99,7 @@ const url = (title) => {
   // if (title === undefined || title === " " || title !== null) {
   //   return null;
   // } else {
-    console.log(title);
+ 
     return `https://www.tfp.is/?s=${title
       .replace(/:/g, '')
       .replace(/'/g, '')

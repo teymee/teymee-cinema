@@ -115,7 +115,25 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 325px) {
+  .cast-list .slick-slide {
+    margin: 0 -70px !important;
+    width:100%;
+  }
+
+  .cast {
+    width: 56px;
+    height: 65px;
+  }
+}
+
+@media screen and (min-width: 325px) and (max-width: 550px) {
+  .cast-list .slick-slide {
+    margin: 0 -105px !important;
+  }
+}
+
+@media screen  and (max-width: 550px) {
   .cast {
     width: 76px;
     height: 80px;
@@ -127,9 +145,7 @@
     display: none;
   }
   
-  .cast-list .slick-slide {
-    margin: 0 -105px !important;
-  }
+
 
   .cast-list {
     bottom: 0 !important;
