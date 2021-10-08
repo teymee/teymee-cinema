@@ -327,11 +327,13 @@ iframe {
   .mobile-movie,
   .mobile-details {
     display: block;
+    background-color: red !important;
   }
 
   .mobile-details .synopsis{
-    padding-top: 50px;
+    padding-top: 50px ;
     padding-bottom: 50px;
+    
   }
 
   .mobile-details .synopsis p{
