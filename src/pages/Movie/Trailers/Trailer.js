@@ -4,7 +4,7 @@ import "../movie.css";
 function Trailer(props) {
   
   return (
-    <div className="trailer">
+    <div className="trailer" allowfullscreen="allowfullScreen">
       <iframe
        
         src={`https://www.youtube.com/embed/${props.youtube}`}
@@ -12,7 +12,7 @@ function Trailer(props) {
         frameBorder="0"
         autoPlay={false}
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen="allowfullscreen"
+        allowFullScreen="allowfullScreen"
         
       ></iframe>
 
