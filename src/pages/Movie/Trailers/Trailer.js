@@ -8,16 +8,16 @@ function Trailer(props) {
       <iframe
        
         src={`https://www.youtube.com/embed/${props.youtube}`}
-        allowFullScreen="allowfullScreen"
-        mozallowfullscreen="mozallowfullscreen" 
-        msallowfullscreen="msallowfullscreen" 
-        oallowfullscreen="oallowfullscreen" 
-        webkitallowfullscreen="webkitallowfullscreen"
+        // allowFullScreen="allowfullScreen"
+        // mozallowfullscreen="mozallowfullscreen" 
+        // msallowfullscreen="msallowfullscreen" 
+        // oallowfullscreen="oallowfullscreen" 
+        // webkitallowfullscreen="webkitallowfullscreen"
         title={props.title}
         frameBorder="0"
-        autoPlay={false}
+        // autoPlay={false}
         // allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        
+        allowFullScreen
         
       ></iframe>
 
