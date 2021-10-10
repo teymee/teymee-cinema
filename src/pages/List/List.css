@@ -410,6 +410,7 @@ p {
     padding: 0px 14px;
     margin-bottom: 150px;
     margin-left: 7%;
+    margin-right: 7%;
   }
 
   .card {
@@ -433,6 +434,10 @@ p {
   .detail button {
     padding: 12px 18px;
     font-size: 10px;
+  }
+
+  .first-nav li {
+    font-size: 13px;
   }
 }
 

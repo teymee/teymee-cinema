@@ -202,7 +202,9 @@ const GenreList = (genres, bannergenre1) => {
         }}
         key={index}
       >
+        <Link to={`/genre/${el.id}`}>
         {el.name}
+        </Link>
       </li>
     );
   });

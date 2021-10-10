@@ -1,5 +1,6 @@
 import React from "react";
 import "../movie.css";
+// import Iframe from 'react-iframe'
 
 function Trailer(props) {
   
@@ -16,10 +17,12 @@ function Trailer(props) {
         title={props.title}
         frameBorder="0"
         // autoPlay={false}
-        // allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        // allowFullScreen
         
       ></iframe>
+
+
 
 
 
