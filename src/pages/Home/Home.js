@@ -91,6 +91,21 @@ function Home() {
       <div className="home1">
         <div className="App">
           <Nav />
+          <iframe
+      src={`https://www.youtube.com/embed/xDMP3i36naA`}
+      allowFullScreen="true"
+      mozallowfullscreen="true"
+      msallowfullscreen="true"
+      oallowfullscreen="true"
+      webkitallowfullscreen="true"
+      title={title}
+      frameBorder="0"
+      width="250"
+      height= "300"
+      // autoPlay={false}
+      // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      // allowFullScreen
+    ></iframe>
           <video className="myVideo" style={style}></video>
           <div className="home-details">
             <h4> {genreList || []}</h4>

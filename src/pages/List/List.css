@@ -410,7 +410,10 @@ p {
     padding: 0px 14px;
     margin-bottom: 150px;
     margin-left: 7%;
-    margin-right: 7%;
+  }
+
+  .first-nav li {
+    font-size: 13px;
   }
 
   .card {
@@ -436,9 +439,7 @@ p {
     font-size: 10px;
   }
 
-  .first-nav li {
-    font-size: 13px;
-  }
+ 
 }
 
 
@@ -699,4 +700,8 @@ p {
 
 
 
-
+@media screen and (max-width: 1500px) {
+  .lists {
+    margin-right: 7%;
+  }
+}
