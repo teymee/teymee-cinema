@@ -135,13 +135,13 @@ function Movie() {
 
     content = (
       <>
-        <div className="web-movie">
+        {/* <div className="web-movie">
           <div className="App">
             <header id="banner" style={style}>
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
-                {/* {trailerComponent} */}
+            
                 <Rating theme={theme} rating={rating} />
                 <Cost
                   theme={theme}
@@ -153,7 +153,8 @@ function Movie() {
               </div>
             </header>
           </div>
-        </div>
+        </div> */}
+            {/* {trailerComponent} */}
 
         {/* MOBILE VIEW */}
 

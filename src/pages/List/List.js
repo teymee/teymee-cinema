@@ -44,7 +44,7 @@ function List(props) {
   return (
     <>
     <ErrorBoundary>
-     <Trailer/>
+     
       <Layout
         curPage={curPage}
         pages={pages}
