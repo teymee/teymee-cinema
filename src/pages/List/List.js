@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import API from "../../Api";
+import New from "../Movie/new";
 import ErrorBoundary from "../UI/ErrorBoundary";
 import Layout from "./Layout";
 import "./List.css";
@@ -42,6 +43,7 @@ function List(props) {
   return (
     <>
     <ErrorBoundary>
+      <New/>
       <Layout
         curPage={curPage}
         pages={pages}
