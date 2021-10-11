@@ -257,10 +257,23 @@ iframe {
 }
 
 
-.mobile-movie,
-.mobile-details,
+.mobile-movie{
+  /* opacity: 0; */
+  /* margin-bottom: -2000px;
+  background-color: red; */
+  display: none;
+}
+.mobile-details{
+  width:50%;
+ margin-left: -2000px;
+ margin-top: -200px; 
+ background-color: red;
+}
+
+
 .cost-mobile {
-  opacity:0;
+  margin-bottom: -2000px;
+  background-color: red;
 }
 
 .runtime em{
