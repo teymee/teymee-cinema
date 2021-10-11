@@ -22,6 +22,22 @@ function Trailer(props) {
         
       ></iframe>
 
+<iframe
+       
+       src={`https://www.youtube.com/embed/xDMP3i36naA`}
+       // allowFullScreen="allowfullScreen"
+       // mozallowfullscreen="mozallowfullscreen" 
+       // msallowfullscreen="msallowfullscreen" 
+       // oallowfullscreen="oallowfullscreen" 
+       // webkitallowfullscreen="webkitallowfullscreen"
+       title={props.title}
+       frameBorder="0"
+       // autoPlay={false}
+       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+       // allowFullScreen
+       
+     ></iframe>
+
 
 
 
