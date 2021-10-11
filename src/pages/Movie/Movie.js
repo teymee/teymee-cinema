@@ -168,7 +168,7 @@ function Movie() {
        // allowFullScreen
        
      ></iframe>
-              {trailerComponent}
+              {/* {trailerComponent} */}
             </div>
           </div>
         </div>
