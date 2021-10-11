@@ -141,7 +141,7 @@ function Movie() {
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
-             
+             {trailerComponent}
                 <Rating theme={theme} rating={rating} />
                 <Cost
                   theme={theme}
@@ -149,7 +149,6 @@ function Movie() {
                   budget={movie.budget}
                   company={movie.company}
                 />
-                {trailerComponent}
                 {isClicked && castComponent}
               </div>
             </header>
