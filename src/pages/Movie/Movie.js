@@ -60,7 +60,6 @@ function Movie() {
     styleMobilePoster,
     rating,
     movie,
-    styleWebDisplay,
     trailerComponent,
     castComponent,
     styleMobileDisplay,
@@ -70,7 +69,7 @@ function Movie() {
   styleMobile = {};
   styleMobilePoster = {};
   styleMobileDisplay = {}
-  styleWebDisplay = {}
+ 
 
   if (!isLoading) {
     const onClickHandler = () => {
@@ -146,12 +145,10 @@ function Movie() {
     document.addEventListener("fullscreenchange", function() {
       if (!document.fullscreenElement && document.getElementsByClassName("mobile-trailer")[0] !== undefined ) {
         styleMobileDisplay = {
-          display:"block"
+          display:"block !Important",
         }
 
-        styleWebDisplay = {
-          display:"none"
-        }
+       
 
         console.log(document.getElementsByClassName("mobile-trailer")[0] !== undefined )
         console.log("yess")
@@ -160,9 +157,7 @@ function Movie() {
           display:"none"
         }
 
-        styleWebDisplay = {
-          display:"block"
-        }
+        
       }
 
     }, false);
@@ -171,20 +166,19 @@ function Movie() {
 
     content = (
       <>
-        <div className="web-movie" style={styleWebDisplay}>
+        <div className="web-movie" >
           <div className="App">
-            <header id="banner" style={style, {...styleWebDisplay}} >
+            <header id="banner" style={style} >
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
                 {trailerComponent}
-                <Rating theme={theme} rating={rating} style={styleWebDisplay}/>
+                <Rating theme={theme} rating={rating} />
                 <Cost
                   theme={theme}
                   revenue={movie.revenue}
                   budget={movie.budget}
                   company={movie.company}
-                  styleWebDisplay
                 />
                 {isClicked && castComponent}
               </div>
@@ -194,16 +188,16 @@ function Movie() {
 
         {/* MOBILE VIEW */}
 
-        <div className="mobile-movie" style={styleMobile, {...styleMobileDisplay} }>
+        <div className="mobile-movie" style={styleMobile }>
           <Nav />
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
-          <div className="mobile-body" style= {styleMobileDisplay} >
+          <div className="mobile-body"  >
             {detailComponent}
             <div className="mobile-cast">{castComponent}</div>
             <div className="mobile-trailer" >
               <h2> TRAILER(S)</h2>
-              {trailerComponent }
+              <Trailers video={movie.video} style= {styleMobileDisplay} />
             </div>
           </div>
         </div>
