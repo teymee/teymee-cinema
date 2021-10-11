@@ -117,6 +117,7 @@ function Movie() {
       // allowFullScreen
     ></iframe>
     {/* <Trailers video={movie.video} /> */}
+    
     </>);
 
     style = {
