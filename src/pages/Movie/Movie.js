@@ -137,12 +137,16 @@ function Movie() {
           height = this.innerHeight;
 
           if ( winWidth <= 550 && document.getElementsByClassName("mobile-trailer")[0] !== undefined ) {
+            style = {
+              backgroundImage: `url('${movie.img}')`,
+              display: "none !Important",
+            };
             styleMobileDisplay = {
               display: "block !Important",
             };
 
             console.log(
-              document.getElementsByClassName("mobile-trailer")[0] !== undefined
+              winWidth <= 550 && document.getElementsByClassName("mobile-trailer")[0] !== undefined 
             );
             console.log("yess");
           } else {
