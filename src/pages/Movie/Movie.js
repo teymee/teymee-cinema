@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { useLocation, useParams } from "react-router";
 import API from "../../Api";
 import "./movie.css";
@@ -11,7 +11,6 @@ import Rating from "./Rating";
 import Cost from "./Cost";
 import CastList from "../Cast/CastList";
 import ErrorBoundary from "../UI/ErrorBoundary";
-import New from "./new";
 
 function Movie() {
   const [newData, setNewData] = useState({});
@@ -21,6 +20,7 @@ function Movie() {
 
   const location = useLocation().pathname;
   const movieId = useParams().id;
+  const mobileTrailer = useRef()
   let movieType = location.includes("tv") ? "tv" : "movie";
 
   useEffect(() => {
@@ -62,7 +62,8 @@ function Movie() {
     movie,
     trailerComponent,
     castComponent,
-    detailComponent;
+    detailComponent,
+    styleMobileDisplay;
   movie = null;
   style = {};
   styleMobile = {};
@@ -100,26 +101,7 @@ function Movie() {
     castComponent = (
       <CastList cast={movie.cast} theme={theme} onClick={onClickHandler} />
     );
-    trailerComponent = (
-      <>
-      {/* <iframe
-      src={`https://www.youtube.com/embed/xDMP3i36naA`}
-      allowFullScreen="true"
-      mozallowfullscreen="true"
-      msallowfullscreen="true"
-      oallowfullscreen="true"
-      webkitallowfullscreen="true"
-      title={title}
-      frameBorder="0"
-      width="250"
-      height= "300"
-      // autoPlay={false}
-      // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-      // allowFullScreen
-    ></iframe> */}
-    <Trailers video={movie.video} />
-    {/* <New/> */}
-    </>);
+    trailerComponent = <Trailers video={movie.video}  />;
 
     style = {
       backgroundImage: `url('${movie.img}')`,
@@ -133,6 +115,48 @@ function Movie() {
       backgroundImage: `url('${movie.posterImg500}')`,
     };
 
+   
+
+//     .mobile-movie,
+// .mobile-details,
+// .cost-mobile {
+//   display: none;
+// }
+    // mobileTrailer.current
+    // .requestFullscreen()
+    // .then(() => {
+    //   console.log("yess")
+    // })
+    // .catch(() => {
+    //   setIsFullscreen(false);
+    // });
+
+    // console.log( document.getElementsByClassName("mobile-trailer")[0])
+
+  //   var width,height;
+  //   window.onresize = window.onload = function() {
+  //       width = this.innerWidth;
+  //       height = this.innerHeight;
+  //       document.body.innerHTML = width + 'x' + height; // For demo purposes
+  //   }
+  // console.log(width)
+    document.addEventListener("fullscreenchange", function() {
+      if (!document.fullscreenElement && document.getElementsByClassName("mobile-trailer")[0] !== undefined ) {
+        styleMobileDisplay = {
+          display:"block"
+        }
+        console.log(document.getElementsByClassName("mobile-trailer")[0] !== undefined )
+        console.log("yess")
+      }else{
+        styleMobileDisplay = {
+          display:"none"
+        }
+      }
+
+    }, false);
+
+
+
     content = (
       <>
         <div className="web-movie">
@@ -141,7 +165,7 @@ function Movie() {
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
-             {trailerComponent}
+                {trailerComponent}
                 <Rating theme={theme} rating={rating} />
                 <Cost
                   theme={theme}
@@ -154,24 +178,22 @@ function Movie() {
             </header>
           </div>
         </div>
-           
 
         {/* MOBILE VIEW */}
 
-        <div className="mobile-movie" style={styleMobile}>
+        <div className="mobile-movie" style={styleMobile, styleMobileDisplay }>
           <Nav />
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
-          <div className="mobile-body">
+          <div className="mobile-body" styleMobileDisplay >
             {detailComponent}
             <div className="mobile-cast">{castComponent}</div>
-            <div className="mobile-trailer">
+            <div className="mobile-trailer" >
               <h2> TRAILER(S)</h2>
-              <Trailers video={movie.video} />
+              {trailerComponent }
             </div>
           </div>
         </div>
-     
       </>
     );
   } else {
@@ -184,7 +206,7 @@ function Movie() {
 
   return (
     <>
-   {content}
+      <ErrorBoundary>{content}</ErrorBoundary>
     </>
   );
 }
