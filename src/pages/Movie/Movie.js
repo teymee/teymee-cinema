@@ -100,26 +100,26 @@ function Movie() {
     castComponent = (
       <CastList cast={movie.cast} theme={theme} onClick={onClickHandler} />
     );
-    // trailerComponent = (
-    //   <>
-    //   {/* <iframe
-    //   src={`https://www.youtube.com/embed/xDMP3i36naA`}
-    //   allowFullScreen="true"
-    //   mozallowfullscreen="true"
-    //   msallowfullscreen="true"
-    //   oallowfullscreen="true"
-    //   webkitallowfullscreen="true"
-    //   title={title}
-    //   frameBorder="0"
-    //   width="250"
-    //   height= "300"
-    //   // autoPlay={false}
-    //   // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-    //   // allowFullScreen
-    // ></iframe> */}
-    // <Trailers video={movie.video} />
-    // {/* <New/> */}
-    // </>);
+    trailerComponent = (
+      <>
+      {/* <iframe
+      src={`https://www.youtube.com/embed/xDMP3i36naA`}
+      allowFullScreen="true"
+      mozallowfullscreen="true"
+      msallowfullscreen="true"
+      oallowfullscreen="true"
+      webkitallowfullscreen="true"
+      title={title}
+      frameBorder="0"
+      width="250"
+      height= "300"
+      // autoPlay={false}
+      // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      // allowFullScreen
+    ></iframe> */}
+    <Trailers video={movie.video} />
+    {/* <New/> */}
+    </>);
 
     style = {
       backgroundImage: `url('${movie.img}')`,
@@ -135,13 +135,13 @@ function Movie() {
 
     content = (
       <>
-        {/* <div className="web-movie">
+        <div className="web-movie">
           <div className="App">
             <header id="banner" style={style}>
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
-            
+             
                 <Rating theme={theme} rating={rating} />
                 <Cost
                   theme={theme}
@@ -149,28 +149,30 @@ function Movie() {
                   budget={movie.budget}
                   company={movie.company}
                 />
+                {trailerComponent}
                 {isClicked && castComponent}
               </div>
             </header>
           </div>
-        </div> */}
-            {/* {trailerComponent} */}
+        </div>
+           
 
         {/* MOBILE VIEW */}
 
-        <div className="mobile-movie" style={styleMobile}>
+        {/* <div className="mobile-movie" style={styleMobile}>
           <Nav />
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
           <div className="mobile-body">
             {detailComponent}
             <div className="mobile-cast">{castComponent}</div>
-            <div >
+            <div className="mobile-trailer">
               <h2> TRAILER(S)</h2>
               <Trailers video={movie.video} />
             </div>
           </div>
         </div>
+      */}
       </>
     );
   } else {
