@@ -54,7 +54,7 @@ function Movie() {
 
   // DECLARATION
   let content,
-  youtube,
+    youtube,
     style,
     title,
     styleMobile,
@@ -117,8 +117,6 @@ function Movie() {
       backgroundImage: `url('${movie.posterImg500}')`,
     };
 
-    
-
     let width, height;
     window.onresize = window.onload = function () {
       width = this.innerWidth;
@@ -131,28 +129,35 @@ function Movie() {
     document.addEventListener(
       "fullscreenchange",
       function () {
-   
         window.onresize = window.onload = function () {
-         
           var winWidth = this.innerWidth;
           height = this.innerHeight;
 
-          if ( winWidth <= 550 && document.getElementsByClassName("mobile-trailer")[0] !== undefined ) {
+          if (
+            winWidth <= 550 &&
+            document.getElementsByClassName("mobile-trailer")[0] !== undefined
+          ) {
             style = {
               backgroundImage: `url('${movie.img}')`,
               display: "none !Important",
             };
 
             youtube = {
-              display: "none !Important",
-            }
+              display: "none !important",
+            };
             styleMobileDisplay = {
-              display: "block !Important",
+              display: "block !important",
             };
 
+            styleMobile = {
+              backgroundColor: `${theme}30`,
+              display: "block !important",
+            };
 
             console.log(
-              winWidth <= 550 && document.getElementsByClassName("mobile-trailer")[0] !== undefined 
+              winWidth <= 550 &&
+                document.getElementsByClassName("mobile-trailer")[0] !==
+                  undefined
             );
             console.log("yess");
           } else {
@@ -165,6 +170,10 @@ function Movie() {
       false
     );
 
+    console.log(youtube);
+
+    console.log(styleMobile + "MOBILE");
+
     content = (
       <>
         <div className="web-movie">
@@ -172,31 +181,32 @@ function Movie() {
             <header id="banner" style={style}>
               <div className="App">
                 <Nav />
-                {movie &&  <Details
-        title={title}
-        synopsis={movie.synopsis}
-        theme={theme}
-        runtime={movie.runtime}
-        genre={movie.genre}
-        onClick={onClickHandler}
-        releaseDate={movie.releaseDate}
-        movieType={movieType}
-        firstAirDate={movie.firstAirDate}
-        budget={movie.budget}
-        revenue={movie.revenue}
-        rating={movie.rating}
-        seasonNumber={movie.seasonNumber}
-         style = {youtube}
-      />}
+                {movie && (
+                  <Details
+                    title={title}
+                    synopsis={movie.synopsis}
+                    theme={theme}
+                    runtime={movie.runtime}
+                    genre={movie.genre}
+                    onClick={onClickHandler}
+                    releaseDate={movie.releaseDate}
+                    movieType={movieType}
+                    firstAirDate={movie.firstAirDate}
+                    budget={movie.budget}
+                    revenue={movie.revenue}
+                    rating={movie.rating}
+                    seasonNumber={movie.seasonNumber}
+                    style={youtube}
+                  />
+                )}
                 {trailerComponent}
                 <Rating theme={theme} rating={rating} />
                 <Cost
-                 style = {youtube}
+                  style={youtube}
                   theme={theme}
                   revenue={movie.revenue}
                   budget={movie.budget}
                   company={movie.company}
-                 
                 />
                 {isClicked && castComponent}
               </div>
@@ -211,7 +221,23 @@ function Movie() {
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
           <div className="mobile-body">
-            {detailComponent}
+           
+            <Details
+              title={title}
+              synopsis={movie.synopsis}
+              theme={theme}
+              runtime={movie.runtime}
+              genre={movie.genre}
+              onClick={onClickHandler}
+              releaseDate={movie.releaseDate}
+              movieType={movieType}
+              firstAirDate={movie.firstAirDate}
+              budget={movie.budget}
+              revenue={movie.revenue}
+              rating={movie.rating}
+              seasonNumber={movie.seasonNumber}
+              style={styleMobile}
+            />{" "}
             <div className="mobile-cast">{castComponent}</div>
             <div className="mobile-trailer">
               <h2> TRAILER(S)</h2>
