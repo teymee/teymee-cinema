@@ -257,9 +257,11 @@ iframe {
 }
 
 
-.mobile-movie {
+/* .mobile-movie,
+.mobile-details,
+.cost-mobile {
   display: none;
-}
+} */
 
 .runtime em{
   padding-left: 5px;
