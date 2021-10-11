@@ -13,7 +13,7 @@ import ErrorBoundary from "../UI/ErrorBoundary";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import New from "../Movie/new";
+
 
 function Home() {
   const genres = useSelector((state) => state.genre);

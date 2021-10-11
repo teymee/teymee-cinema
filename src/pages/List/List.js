@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import API from "../../Api";
-import New from "../Movie/new";
-import Trailer from "../Movie/Trailers/Trailer";
 import ErrorBoundary from "../UI/ErrorBoundary";
 import Layout from "./Layout";
 import "./List.css";

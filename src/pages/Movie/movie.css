@@ -257,9 +257,7 @@ iframe {
 }
 
 
-.mobile-movie,
-.mobile-details,
-.cost-mobile {
+.mobile-movie {
   display: none;
 }
 

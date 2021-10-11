@@ -1,6 +1,6 @@
 import React from "react";
 import "../movie.css";
-// import Iframe from 'react-iframe'
+
 
 function Trailer(props) {
   
@@ -21,9 +21,6 @@ function Trailer(props) {
         // allowFullScreen
         
       ></iframe>
-
-
-
 
 
 
