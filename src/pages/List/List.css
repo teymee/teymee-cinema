@@ -145,9 +145,11 @@ p {
 .lists {
   padding: 0px 14px;
   margin-bottom: 150px;
-  
+  /* top:50%; */
+  left: 50%;
+  transform: translate(4%);
  
-  margin-left: 13%;
+  /* margin-left: 13%; */
 }
 
 .card {
@@ -409,7 +411,7 @@ p {
   .lists {
     padding: 0px 14px;
     margin-bottom: 150px;
-    margin-left: 7%;
+    /* margin-left: 7%; */
   }
 
   .first-nav li {
@@ -700,8 +702,3 @@ p {
 
 
 
-@media screen and (max-width: 1500px) {
-  .lists {
-    margin-right: 7%;
-  }
-}

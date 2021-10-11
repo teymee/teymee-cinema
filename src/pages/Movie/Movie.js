@@ -182,7 +182,7 @@ function Movie() {
 
   return (
     <>
-      <ErrorBoundary>{content}</ErrorBoundary>
+   {content}
     </>
   );
 }

@@ -93,18 +93,18 @@ function Home() {
           <Nav />
           <iframe
       src={`https://www.youtube.com/embed/xDMP3i36naA`}
-      allowFullScreen="true"
-      mozallowfullscreen="true"
-      msallowfullscreen="true"
-      oallowfullscreen="true"
-      webkitallowfullscreen="true"
+      // allowFullScreen="true"
+      // mozallowfullscreen="true"
+      // msallowfullscreen="true"
+      // oallowfullscreen="true"
+      // webkitallowfullscreen="true"
       title={title}
       frameBorder="0"
       width="250"
       height= "300"
-      // autoPlay={false}
-      // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-      // allowFullScreen
+      autoPlay={false}
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      allowFullScreen
     ></iframe>
           <video className="myVideo" style={style}></video>
           <div className="home-details">
