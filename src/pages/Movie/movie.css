@@ -316,11 +316,11 @@ iframe {
 /* MOBILE */
 
 @media screen and (max-width: 550px) {
-  .web-movie,
+  /* .web-movie,
   .cost,
   .details {
     display: none;
-  }
+  } */
 
 
   .mobile-movie,
