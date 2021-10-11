@@ -103,11 +103,11 @@ function Movie() {
       <>
       <iframe
       src={`https://www.youtube.com/embed/xDMP3i36naA`}
-      allowFullScreen="allowfullScreen"
-      mozallowfullscreen="mozallowfullscreen"
-      msallowfullscreen="msallowfullscreen"
-      oallowfullscreen="oallowfullscreen"
-      webkitallowfullscreen="webkitallowfullscreen"
+      allowFullScreen="true"
+      mozallowfullscreen="true"
+      msallowfullscreen="true"
+      oallowfullscreen="true"
+      webkitallowfullscreen="true"
       title={title}
       frameBorder="0"
       width="250"
