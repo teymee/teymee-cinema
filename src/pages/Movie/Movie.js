@@ -165,7 +165,7 @@ function Movie() {
           <div className="mobile-body">
             {detailComponent}
             <div className="mobile-cast">{castComponent}</div>
-            <div className="mobile-trailer">
+            <div >
               <h2> TRAILER(S)</h2>
               <Trailers video={movie.video} />
             </div>
