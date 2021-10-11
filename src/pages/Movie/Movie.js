@@ -60,14 +60,17 @@ function Movie() {
     styleMobilePoster,
     rating,
     movie,
+    styleWebDisplay,
     trailerComponent,
     castComponent,
-    detailComponent,
-    styleMobileDisplay;
+    styleMobileDisplay,
+    detailComponent;
   movie = null;
   style = {};
   styleMobile = {};
   styleMobilePoster = {};
+  styleMobileDisplay = {}
+  styleWebDisplay = {}
 
   if (!isLoading) {
     const onClickHandler = () => {
@@ -145,11 +148,20 @@ function Movie() {
         styleMobileDisplay = {
           display:"block"
         }
+
+        styleWebDisplay = {
+          display:"none"
+        }
+
         console.log(document.getElementsByClassName("mobile-trailer")[0] !== undefined )
         console.log("yess")
       }else{
         styleMobileDisplay = {
           display:"none"
+        }
+
+        styleWebDisplay = {
+          display:"block"
         }
       }
 
@@ -159,19 +171,20 @@ function Movie() {
 
     content = (
       <>
-        <div className="web-movie">
+        <div className="web-movie" style={styleWebDisplay}>
           <div className="App">
-            <header id="banner" style={style}>
+            <header id="banner" style={style, {...styleWebDisplay}} >
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
                 {trailerComponent}
-                <Rating theme={theme} rating={rating} />
+                <Rating theme={theme} rating={rating} style={styleWebDisplay}/>
                 <Cost
                   theme={theme}
                   revenue={movie.revenue}
                   budget={movie.budget}
                   company={movie.company}
+                  styleWebDisplay
                 />
                 {isClicked && castComponent}
               </div>
@@ -181,11 +194,11 @@ function Movie() {
 
         {/* MOBILE VIEW */}
 
-        <div className="mobile-movie" style={styleMobile, styleMobileDisplay }>
+        <div className="mobile-movie" style={styleMobile, {...styleMobileDisplay} }>
           <Nav />
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
-          <div className="mobile-body" styleMobileDisplay >
+          <div className="mobile-body" style= {styleMobileDisplay} >
             {detailComponent}
             <div className="mobile-cast">{castComponent}</div>
             <div className="mobile-trailer" >
