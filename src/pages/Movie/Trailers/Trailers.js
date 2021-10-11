@@ -20,21 +20,7 @@ function Trailers(props) {
     return (
      <>
         <Trailer youtube={element.key} title={element.title} key={element.key}/>
-        <iframe
-       
-       src={`https://www.youtube.com/embed/xDMP3i36naA`}
-       // allowFullScreen="allowfullScreen"
-       // mozallowfullscreen="mozallowfullscreen" 
-       // msallowfullscreen="msallowfullscreen" 
-       // oallowfullscreen="oallowfullscreen" 
-       // webkitallowfullscreen="webkitallowfullscreen"
-       title={props.title}
-       frameBorder="0"
-       // autoPlay={false}
-       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-       // allowFullScreen
-       
-     ></iframe>
+     
         </>
      
     );

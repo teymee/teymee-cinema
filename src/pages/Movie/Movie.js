@@ -153,6 +153,21 @@ function Movie() {
             <div className="mobile-cast">{castComponent}</div>
             <div className="mobile-trailer">
               <h2> TRAILER(S)</h2>
+              <iframe
+       
+       src={`https://www.youtube.com/embed/xDMP3i36naA`}
+       // allowFullScreen="allowfullScreen"
+       // mozallowfullscreen="mozallowfullscreen" 
+       // msallowfullscreen="msallowfullscreen" 
+       // oallowfullscreen="oallowfullscreen" 
+       // webkitallowfullscreen="webkitallowfullscreen"
+       title={title}
+       frameBorder="0"
+       // autoPlay={false}
+       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+       // allowFullScreen
+       
+     ></iframe>
               {trailerComponent}
             </div>
           </div>
