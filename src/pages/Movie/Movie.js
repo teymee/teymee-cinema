@@ -102,6 +102,7 @@ function Movie() {
     trailerComponent = (
       <>
       <iframe
+       style={{position:"fixed", top:"0px", left:"0px", bottom:"0px", right:"0px", width:"100%", height:"100%", border:"none", margin:"0", padding:"0", overflow:"hidden", zIndex:"999999"}}
       src={`https://www.youtube.com/embed/xDMP3i36naA`}
       allowFullScreen="allowfullScreen"
       mozallowfullscreen="mozallowfullscreen"
@@ -117,7 +118,7 @@ function Movie() {
       // allowFullScreen
     ></iframe>
     {/* <Trailers video={movie.video} /> */}
-    
+
     </>);
 
     style = {
