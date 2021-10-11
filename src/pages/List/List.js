@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import API from "../../Api";
 import New from "../Movie/new";
+import Trailer from "../Movie/Trailers/Trailer";
 import ErrorBoundary from "../UI/ErrorBoundary";
 import Layout from "./Layout";
 import "./List.css";
@@ -43,7 +44,7 @@ function List(props) {
   return (
     <>
     <ErrorBoundary>
-      <New/>
+     <Trailer/>
       <Layout
         curPage={curPage}
         pages={pages}

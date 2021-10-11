@@ -6,7 +6,7 @@ function Trailer(props) {
   
   return (
     <div className="trailer" allowfullscreen="allowfullScreen">
-      <iframe
+      {/* <iframe
        
         src={`https://www.youtube.com/embed/${props.youtube}`}
         // allowFullScreen="allowfullScreen"
@@ -20,9 +20,19 @@ function Trailer(props) {
         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
         // allowFullScreen
         
+      ></iframe> */}
+
+
+<iframe
+        src={`https://www.youtube.com/embed/xDMP3i36naA`}
+        title="fjdkf"
+        frameBorder="0"
+        width="250"
+        height="300"
+        autoPlay={false}
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        allowFullScreen
       ></iframe>
-
-
 
 
 
