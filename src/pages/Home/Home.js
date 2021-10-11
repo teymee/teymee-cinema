@@ -13,6 +13,7 @@ import ErrorBoundary from "../UI/ErrorBoundary";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import New from "../Movie/new";
 
 function Home() {
   const genres = useSelector((state) => state.genre);
@@ -91,7 +92,7 @@ function Home() {
       <div className="home1">
         <div className="App">
           <Nav />
-     
+          <New/>
           <video className="myVideo" style={style}></video>
           <div className="home-details">
             <h4> {genreList || []}</h4>

@@ -117,8 +117,8 @@ function Movie() {
       // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
       // allowFullScreen
     ></iframe> */}
-    {/* <Trailers video={movie.video} /> */}
-    <New/>
+    <Trailers video={movie.video} />
+    {/* <New/> */}
     </>);
 
     style = {
