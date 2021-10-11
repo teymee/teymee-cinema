@@ -54,6 +54,7 @@ function Movie() {
 
   // DECLARATION
   let content,
+  youtube,
     style,
     title,
     styleMobile,
@@ -141,9 +142,14 @@ function Movie() {
               backgroundImage: `url('${movie.img}')`,
               display: "none !Important",
             };
+
+            youtube = {
+              display: "none !Important",
+            }
             styleMobileDisplay = {
               display: "block !Important",
             };
+
 
             console.log(
               winWidth <= 550 && document.getElementsByClassName("mobile-trailer")[0] !== undefined 
@@ -166,14 +172,31 @@ function Movie() {
             <header id="banner" style={style}>
               <div className="App">
                 <Nav />
-                {movie && detailComponent}
+                {movie &&  <Details
+        title={title}
+        synopsis={movie.synopsis}
+        theme={theme}
+        runtime={movie.runtime}
+        genre={movie.genre}
+        onClick={onClickHandler}
+        releaseDate={movie.releaseDate}
+        movieType={movieType}
+        firstAirDate={movie.firstAirDate}
+        budget={movie.budget}
+        revenue={movie.revenue}
+        rating={movie.rating}
+        seasonNumber={movie.seasonNumber}
+         style = {youtube}
+      />}
                 {trailerComponent}
                 <Rating theme={theme} rating={rating} />
                 <Cost
+                 style = {youtube}
                   theme={theme}
                   revenue={movie.revenue}
                   budget={movie.budget}
                   company={movie.company}
+                 
                 />
                 {isClicked && castComponent}
               </div>
