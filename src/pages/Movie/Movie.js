@@ -11,6 +11,7 @@ import Rating from "./Rating";
 import Cost from "./Cost";
 import CastList from "../Cast/CastList";
 import ErrorBoundary from "../UI/ErrorBoundary";
+import New from "./new";
 
 function Movie() {
   const [newData, setNewData] = useState({});
@@ -101,7 +102,7 @@ function Movie() {
     );
     trailerComponent = (
       <>
-      <iframe
+      {/* <iframe
       src={`https://www.youtube.com/embed/xDMP3i36naA`}
       allowFullScreen="true"
       mozallowfullscreen="true"
@@ -115,9 +116,9 @@ function Movie() {
       // autoPlay={false}
       // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
       // allowFullScreen
-    ></iframe>
+    ></iframe> */}
     {/* <Trailers video={movie.video} /> */}
-    
+    <New/>
     </>);
 
     style = {

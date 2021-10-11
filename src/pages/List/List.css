@@ -411,7 +411,8 @@ p {
   .lists {
     padding: 0px 14px;
     margin-bottom: 150px;
-    /* margin-left: 7%; */
+    left: 50%;
+    transform: translate(6%);
   }
 
   .first-nav li {
@@ -483,7 +484,8 @@ p {
 
   .lists {
     margin-bottom: 100px;
-    margin-left: 1px;
+    left: 50%;
+  transform: translate(1%);
   }
 
   .search-error img {
