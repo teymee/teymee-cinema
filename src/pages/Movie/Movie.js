@@ -13,7 +13,6 @@ import CastList from "../Cast/CastList";
 import ErrorBoundary from "../UI/ErrorBoundary";
 
 function Movie() {
- 
   const [newData, setNewData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [theme, setTheme] = useState("");
@@ -22,7 +21,6 @@ function Movie() {
   const location = useLocation().pathname;
   const movieId = useParams().id;
   let movieType = location.includes("tv") ? "tv" : "movie";
- 
 
   useEffect(() => {
     setIsLoading(true);
@@ -51,7 +49,6 @@ function Movie() {
       setTheme(theme[randomColor]);
       setIsLoading(false);
     }, 1500);
-   
   }, [movieId, movieType]);
 
   // DECLARATION
@@ -65,18 +62,17 @@ function Movie() {
     trailerComponent,
     castComponent,
     detailComponent;
-   movie = null;
+  movie = null;
   style = {};
   styleMobile = {};
   styleMobilePoster = {};
 
   if (!isLoading) {
-
     const onClickHandler = () => {
       setIsClicked(!isClicked);
     };
 
-    movie  = newData
+    movie = newData;
 
     title = movie.title;
 
@@ -96,14 +92,32 @@ function Movie() {
         budget={movie.budget}
         revenue={movie.revenue}
         rating={movie.rating}
-        seasonNumber = {movie.seasonNumber}
+        seasonNumber={movie.seasonNumber}
       />
     );
 
     castComponent = (
       <CastList cast={movie.cast} theme={theme} onClick={onClickHandler} />
     );
-    trailerComponent = <Trailers video={movie.video} />;
+    trailerComponent = (
+      <>
+      <iframe
+      src={`https://www.youtube.com/embed/xDMP3i36naA`}
+      allowFullScreen="allowfullScreen"
+      mozallowfullscreen="mozallowfullscreen"
+      msallowfullscreen="msallowfullscreen"
+      oallowfullscreen="oallowfullscreen"
+      webkitallowfullscreen="webkitallowfullscreen"
+      title={title}
+      frameBorder="0"
+      width="250"
+      height= "300"
+      // autoPlay={false}
+      // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      // allowFullScreen
+    ></iframe>
+    <Trailers video={movie.video} />
+    </>);
 
     style = {
       backgroundImage: `url('${movie.img}')`,
@@ -116,9 +130,6 @@ function Movie() {
     styleMobilePoster = {
       backgroundImage: `url('${movie.posterImg500}')`,
     };
-
-  
-   
 
     content = (
       <>
@@ -153,29 +164,15 @@ function Movie() {
             <div className="mobile-cast">{castComponent}</div>
             <div className="mobile-trailer">
               <h2> TRAILER(S)</h2>
-              <iframe
-       
-       src={`https://www.youtube.com/embed/xDMP3i36naA`}
-       // allowFullScreen="allowfullScreen"
-       // mozallowfullscreen="mozallowfullscreen" 
-       // msallowfullscreen="msallowfullscreen" 
-       // oallowfullscreen="oallowfullscreen" 
-       // webkitallowfullscreen="webkitallowfullscreen"
-       title={title}
-       frameBorder="0"
-       // autoPlay={false}
-       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-       // allowFullScreen
-       
-     ></iframe>
-              {/* {trailerComponent} */}
+           
+              {trailerComponent}
             </div>
           </div>
         </div>
       </>
     );
-  }else{
-    content = <PreLoader />
+  } else {
+    content = <PreLoader />;
   }
 
   if (!isLoading && theme === undefined) {
@@ -184,9 +181,7 @@ function Movie() {
 
   return (
     <>
-    <ErrorBoundary>
-      { content}
-    </ErrorBoundary>
+      <ErrorBoundary>{content}</ErrorBoundary>
     </>
   );
 }
