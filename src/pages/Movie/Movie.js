@@ -100,26 +100,26 @@ function Movie() {
     castComponent = (
       <CastList cast={movie.cast} theme={theme} onClick={onClickHandler} />
     );
-    trailerComponent = (
-      <>
-      {/* <iframe
-      src={`https://www.youtube.com/embed/xDMP3i36naA`}
-      allowFullScreen="true"
-      mozallowfullscreen="true"
-      msallowfullscreen="true"
-      oallowfullscreen="true"
-      webkitallowfullscreen="true"
-      title={title}
-      frameBorder="0"
-      width="250"
-      height= "300"
-      // autoPlay={false}
-      // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-      // allowFullScreen
-    ></iframe> */}
-    <Trailers video={movie.video} />
-    {/* <New/> */}
-    </>);
+    // trailerComponent = (
+    //   <>
+    //   {/* <iframe
+    //   src={`https://www.youtube.com/embed/xDMP3i36naA`}
+    //   allowFullScreen="true"
+    //   mozallowfullscreen="true"
+    //   msallowfullscreen="true"
+    //   oallowfullscreen="true"
+    //   webkitallowfullscreen="true"
+    //   title={title}
+    //   frameBorder="0"
+    //   width="250"
+    //   height= "300"
+    //   // autoPlay={false}
+    //   // allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+    //   // allowFullScreen
+    // ></iframe> */}
+    // <Trailers video={movie.video} />
+    // {/* <New/> */}
+    // </>);
 
     style = {
       backgroundImage: `url('${movie.img}')`,
@@ -141,7 +141,7 @@ function Movie() {
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
-                {trailerComponent}
+                {/* {trailerComponent} */}
                 <Rating theme={theme} rating={rating} />
                 <Cost
                   theme={theme}
@@ -166,8 +166,7 @@ function Movie() {
             <div className="mobile-cast">{castComponent}</div>
             <div className="mobile-trailer">
               <h2> TRAILER(S)</h2>
-           
-              {trailerComponent}
+              <Trailers video={movie.video} />
             </div>
           </div>
         </div>

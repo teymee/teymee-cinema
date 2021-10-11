@@ -92,7 +92,7 @@ function Home() {
       <div className="home1">
         <div className="App">
           <Nav />
-          <New/>
+         
           <video className="myVideo" style={style}></video>
           <div className="home-details">
             <h4> {genreList || []}</h4>
