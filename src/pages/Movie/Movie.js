@@ -158,7 +158,7 @@ function Movie() {
 
         {/* MOBILE VIEW */}
 
-        {/* <div className="mobile-movie" style={styleMobile}>
+        <div className="mobile-movie" style={styleMobile}>
           <Nav />
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
@@ -171,7 +171,7 @@ function Movie() {
             </div>
           </div>
         </div>
-      */}
+     
       </>
     );
   } else {

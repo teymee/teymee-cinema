@@ -257,11 +257,11 @@ iframe {
 }
 
 
-.mobile-movie,
+/* .mobile-movie,
 .mobile-details,
 .cost-mobile {
   display: none;
-}
+} */
 
 .runtime em{
   padding-left: 5px;
@@ -318,11 +318,11 @@ iframe {
 /* MOBILE */
 
 @media screen and (max-width: 550px) {
-  /* .web-movie,
+  .web-movie,
   .cost,
   .details {
     display: none;
-  } */
+  }
 
 
   .mobile-movie,
