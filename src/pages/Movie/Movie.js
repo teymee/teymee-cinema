@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useParams } from "react-router";
 import API from "../../Api";
 import "./movie.css";
@@ -20,7 +20,7 @@ function Movie() {
 
   const location = useLocation().pathname;
   const movieId = useParams().id;
-  const mobileTrailer = useRef()
+  const mobileTrailer = useRef();
   let movieType = location.includes("tv") ? "tv" : "movie";
 
   useEffect(() => {
@@ -68,8 +68,7 @@ function Movie() {
   style = {};
   styleMobile = {};
   styleMobilePoster = {};
-  styleMobileDisplay = {}
- 
+  styleMobileDisplay = {};
 
   if (!isLoading) {
     const onClickHandler = () => {
@@ -103,7 +102,7 @@ function Movie() {
     castComponent = (
       <CastList cast={movie.cast} theme={theme} onClick={onClickHandler} />
     );
-    trailerComponent = <Trailers video={movie.video}  />;
+    trailerComponent = <Trailers video={movie.video} />;
 
     style = {
       backgroundImage: `url('${movie.img}')`,
@@ -117,58 +116,50 @@ function Movie() {
       backgroundImage: `url('${movie.posterImg500}')`,
     };
 
+    
+
+    let width, height;
+    window.onresize = window.onload = function () {
+      width = this.innerWidth;
+      height = this.innerHeight;
+      // document.body.innerHTML = width + 'x' + height;
+      // For demo purposes
+      // console.log(width)
+    };
+    // console.log(width)
+    document.addEventListener(
+      "fullscreenchange",
+      function () {
    
+        window.onresize = window.onload = function () {
+         
+          var winWidth = this.innerWidth;
+          height = this.innerHeight;
 
-//     .mobile-movie,
-// .mobile-details,
-// .cost-mobile {
-//   display: none;
-// }
-    // mobileTrailer.current
-    // .requestFullscreen()
-    // .then(() => {
-    //   console.log("yess")
-    // })
-    // .catch(() => {
-    //   setIsFullscreen(false);
-    // });
+          if ( winWidth <= 550 && document.getElementsByClassName("mobile-trailer")[0] !== undefined ) {
+            styleMobileDisplay = {
+              display: "block !Important",
+            };
 
-    // console.log( document.getElementsByClassName("mobile-trailer")[0])
-
-  //   var width,height;
-  //   window.onresize = window.onload = function() {
-  //       width = this.innerWidth;
-  //       height = this.innerHeight;
-  //       document.body.innerHTML = width + 'x' + height; // For demo purposes
-  //   }
-  // console.log(width)
-    document.addEventListener("fullscreenchange", function() {
-      if (!document.fullscreenElement && document.getElementsByClassName("mobile-trailer")[0] !== undefined ) {
-        styleMobileDisplay = {
-          display:"block !Important",
-        }
-
-       
-
-        console.log(document.getElementsByClassName("mobile-trailer")[0] !== undefined )
-        console.log("yess")
-      }else{
-        styleMobileDisplay = {
-          display:"none"
-        }
-
-        
-      }
-
-    }, false);
-
-
+            console.log(
+              document.getElementsByClassName("mobile-trailer")[0] !== undefined
+            );
+            console.log("yess");
+          } else {
+            styleMobileDisplay = {
+              display: "none",
+            };
+          }
+        };
+      },
+      false
+    );
 
     content = (
       <>
-        <div className="web-movie" >
+        <div className="web-movie">
           <div className="App">
-            <header id="banner" style={style} >
+            <header id="banner" style={style}>
               <div className="App">
                 <Nav />
                 {movie && detailComponent}
@@ -188,16 +179,16 @@ function Movie() {
 
         {/* MOBILE VIEW */}
 
-        <div className="mobile-movie" style={styleMobile }>
+        <div className="mobile-movie" style={styleMobile}>
           <Nav />
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
-          <div className="mobile-body"  >
+          <div className="mobile-body">
             {detailComponent}
             <div className="mobile-cast">{castComponent}</div>
-            <div className="mobile-trailer" >
+            <div className="mobile-trailer">
               <h2> TRAILER(S)</h2>
-              <Trailers video={movie.video} style= {styleMobileDisplay} />
+              <Trailers video={movie.video} style={styleMobileDisplay} />
             </div>
           </div>
         </div>
