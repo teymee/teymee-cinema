@@ -412,16 +412,18 @@ p {
     padding: 0px 14px;
     margin-bottom: 150px;
     left: 50%;
+    right: 50%;
     transform: translate(6%);
   }
 
   .first-nav li {
-    font-size: 13px;
+    font-size: 12px;
   }
 
+
   .card {
-    width: 180px;
-    height: 290px;
+    width: 220px;
+    height: 370px;
   }
 
   .detail h3 {

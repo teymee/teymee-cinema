@@ -257,22 +257,8 @@ iframe {
 }
 
 
-.mobile-movie{
-  /* opacity: 0; */
-  /* visibility: hidden; */
-  /* margin-bottom: -2000px;
-  background-color: red; */
-  /* display: none; */
-}
+
 .mobile-details1{
-  /* width:50%;
-  height: 20px;
- margin-left: -2000px;
- margin-top: -200px; 
- background-color: red; */
- /* margin-left: -2000px;
- margin-top: -200px;  */
- /* visibility: hidden; */
  display: none;
 }
 
@@ -287,14 +273,11 @@ iframe {
   display: none;
 }
 .mobile-trailer{
-  /* display: block; */
-   opacity: 0;
+    opacity: 0;
 }
 
 .cost-mobile {
-  /* margin-bottom: -2000px;
-  background-color: red; */
-  display: none;
+   display: none;
 }
 
 .runtime em{
