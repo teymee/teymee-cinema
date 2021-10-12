@@ -273,7 +273,7 @@ iframe {
  /* margin-left: -2000px;
  margin-top: -200px;  */
  /* visibility: hidden; */
- display: none;
+ /* display: none; */
 }
 
 
@@ -347,6 +347,10 @@ iframe {
   visibility: visible;
   }
 
+  .mobile-details {
+    display: block !important;
+   
+  }
   .mobile-movie,
   .mobile-details {
     display: block;
