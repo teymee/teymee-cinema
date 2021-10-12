@@ -270,9 +270,10 @@ iframe {
  margin-left: -2000px;
  margin-top: -200px; 
  background-color: red; */
- margin-left: -2000px;
- margin-top: -200px; 
+ /* margin-left: -2000px;
+ margin-top: -200px;  */
  /* visibility: hidden; */
+ display: none;
 }
 
 
