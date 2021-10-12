@@ -149,7 +149,11 @@ function Movie() {
           <div style={styleMobilePoster} className="mobile-poster"></div>
 
           <div className="mobile-body">
+            <div  className="mobile-details1">
             {detailComponent}
+            </div>
+
+            
             <div className="mobile-cast">{castComponent}</div>
             <div className="mobile-trailer">
               <h2> TRAILER(S)</h2>
