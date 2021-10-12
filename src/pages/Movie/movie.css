@@ -313,6 +313,12 @@ iframe {
   font-size: 12px;
 }
 
+.trailers {
+
+  margin-top: 60px;
+}
+ 
+
 .cost1 {
   padding-top: 15px;
   font-size: 12px !important;
@@ -341,6 +347,9 @@ iframe {
     display: none;
   }
 
+  .mobile-movie .bar {
+    background-color: black;
+  }
   .mobile-details1{
     display: block;
   }
