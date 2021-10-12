@@ -272,7 +272,7 @@ iframe {
  background-color: red; */
  margin-left: -2000px;
  margin-top: -200px; 
- visibility: hidden;
+ /* visibility: hidden; */
 }
 
 
@@ -342,6 +342,9 @@ iframe {
     display: none;
   }
 
+  .mobile-movie{
+  visibility: visible;
+  }
 
   .mobile-movie,
   .mobile-details {
