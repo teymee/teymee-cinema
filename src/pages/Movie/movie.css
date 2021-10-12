@@ -259,10 +259,10 @@ iframe {
 
 .mobile-movie{
   /* opacity: 0; */
-  visibility: hidden;
+  /* visibility: hidden; */
   /* margin-bottom: -2000px;
   background-color: red; */
-  /* display: none; */
+  display: none;
 }
 .mobile-details{
   /* width:50%;
@@ -273,9 +273,12 @@ iframe {
  /* margin-left: -2000px;
  margin-top: -200px;  */
  /* visibility: hidden; */
- /* display: none; */
+ display: none;
 }
 
+.mobile-trailer{
+  display: block;
+}
 
 .cost-mobile {
   margin-bottom: -2000px;
