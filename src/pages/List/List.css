@@ -582,9 +582,11 @@ p {
     width: 100% !important;
   }
 
-  .first-nav li {
+  .first-nav a li {
     padding: 7px !important;
-    font-size: 12px !important;
+    font-size: 10px !important;
+    width: 100%;
+    /* background-color: red; */
   }
 
   .second-nav li {
@@ -624,6 +626,7 @@ p {
     width: 400px;
     display: flex;
     justify-content: center;
+    margin-top: -30px;
   }
 
   .pagination li {
