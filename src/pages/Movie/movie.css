@@ -300,6 +300,8 @@ iframe {
 
   .rating {
     font-size: 12px;
+    /* width: 100px; */
+    height: 50px;
   }
 
   .trailers {
