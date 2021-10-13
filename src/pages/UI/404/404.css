@@ -78,6 +78,10 @@ h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, h6:focus, p:focus, ul:focus, l
   z-index: 1;
   animation: pieceLeft 8s cubic-bezier(1, 0.06, 0.25, 1) infinite both;
 }
+
+.text button a{
+  color:black !important;
+}
 @keyframes pieceLeft {
   50% {
     left: 80%;

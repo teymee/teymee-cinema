@@ -26,8 +26,8 @@ function Category() {
     case "tvseries":
       api = API.TV;
       break;
-    case "popular":
-      api = API.POPULAR;
+    case "airing":
+      api = API.AIRING;
       break;
     default:
       api = API.TRENDING;

@@ -154,8 +154,8 @@ p {
 
 .card {
   position: relative;
-  width: 250px;
-  height: 450px;
+  width: 240px;
+  height: 410px;
   display: inline-block;
   transition: 1s ease;
   margin-left: 20px;

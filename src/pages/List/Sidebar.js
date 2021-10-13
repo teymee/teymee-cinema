@@ -41,13 +41,7 @@ function Sidebar(props) {
              Trending
             </li>
           </Link>
-          <Link to="/category/popular">
-            <li onClick={props.catNav}>
-              {" "}
-              <FontAwesomeIcon icon={faStar} color="#B2325D" style={{paddingRight:"2px"}} />
-             Popular
-            </li>
-          </Link>
+          
           <Link to="/category/top_rated">
          
             <li onClick={props.catNav}>
@@ -61,6 +55,14 @@ function Sidebar(props) {
             <li onClick={props.catNav}>
               {" "}
               <FontAwesomeIcon icon={faTv} color="#B2325D" style={{paddingRight:"2px"}} /> TV series
+            </li>
+          </Link>
+
+          <Link to="/category/airing">
+            <li onClick={props.catNav}>
+              {" "}
+              <FontAwesomeIcon icon={faStar} color="#B2325D" style={{paddingRight:"2px"}} />
+             Airing Today
             </li>
           </Link>
         </ul>

@@ -24,11 +24,12 @@ function Home() {
   const [theme, setTheme] = useState();
 
 
-  let content, style, styleTheme, link, genreList, styleThemeBorder, url, title,banner;
+  let content, style, styleTheme, link, genreList, styleThemeBorder, url, title,banner,discoverMovies;
 
   useEffect(() => {
     async function randomMovies() {
       try {
+        
         const response = await fetch(API.DISCOVER);
         const data = await response.json();
         const newData = await API.DATA_CHECK(data.results, "list", "genre");
@@ -71,6 +72,7 @@ function Home() {
   if (!isLoading && newData) {
     banner = API.randomMovie(newData);
     title = banner.title;
+    discoverMovies = newData
    
     url = API.url(title);
 
@@ -94,7 +96,7 @@ function Home() {
           <Nav />
          
           <video className="myVideo" style={style}></video>
-          <div className="home-details">
+          <div className="home-details animate__animated animate__bounceInUp animate__slow">
             <h4> {genreList || []}</h4>
             <h1 className="title">
               {title} <div className="fullstop" style={styleTheme}></div>
@@ -141,7 +143,7 @@ function Home() {
           </div>
 
           <div className="home-middle">
-            <DiscoverList />
+            <DiscoverList discoverMovies = {discoverMovies}/>
           </div>
         </div>
       </div>

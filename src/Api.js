@@ -19,10 +19,20 @@ const dataCheck = (data, type, category) => {
       return data.backdrop_path !== null;
     });
 
-    const newData = backdropCheck.filter((data) => {
+    const noReality = backdropCheck.filter((item) => {
+      return item.genre_ids.indexOf(10764) === -1;
+    });
+    const noNews = noReality.filter((item) => {
+      return item.genre_ids.indexOf(10763) === -1;
+    });
+    const noTalk = noNews.filter((item) => {
+      return item.genre_ids.indexOf(10767) === -1;
+    });
+
+    const newData = noTalk.filter((data) => {
       let check;
 
-      if (data.media_type === "tv" || checkTv) {
+      if (data.media_type === "tv" || checkTv || data.name) {
         check = data.name !== undefined;
       } else if (data.media_type === "movie" || !checkTv) {
         check = data.title !== undefined;
@@ -33,7 +43,7 @@ const dataCheck = (data, type, category) => {
 
     const transformed = newData.map((data) => {
       let title, firstAirDate;
-      if (data.media_type === "tv" || checkTv) {
+      if (data.media_type === "tv" || checkTv || data.name) {
         title = data.name;
         firstAirDate = data.first_air_date;
       } else if (data.media_type === "movie" || !checkTv) {
@@ -96,22 +106,16 @@ const dataCheck = (data, type, category) => {
 
 //URL
 const url = (title) => {
-  // if (title === undefined || title === " " || title !== null) {
-  //   return null;
-  // } else {
- 
-    return `https://www.tfp.is/?s=${title
-      .replace(/:/g, '')
-      .replace(/'/g, '')
-      .replace(/ /g, "+")}`;
-  
+  return `https://www.tfp.is/?s=${title
+    .replace(/:/g, "")
+    .replace(/'/g, "")
+    .replace(/ /g, "+")}`;
 };
 
 // FINAL RENDER LOGIC
 const finalRender = (isLoading, movie) => {
   let content;
   if (!isLoading) {
-    
     content = movie.map((el) => {
       let title = API.SLIM_TITLE(el.title, 12, 15);
       if (el.firstAirDate !== null) {
@@ -129,7 +133,7 @@ const finalRender = (isLoading, movie) => {
       }
     });
   } else {
-    content = [1, 2, 3, 4, 5, 6, 7, 8].map((el) => {
+    content = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => {
       return <SkeletonCard key={el} />;
     });
   }
@@ -139,7 +143,7 @@ const finalRender = (isLoading, movie) => {
 
 //GENERATE RANDOM MOVIES
 let randomMovie = (data) => {
-  const rand = Math.floor(Math.random() * 20) + 1;
+  const rand = Math.floor(Math.random() * data.length) + 1;
   return data[rand];
 };
 
@@ -202,9 +206,7 @@ const GenreList = (genres, bannergenre1) => {
         }}
         key={index}
       >
-        <Link to={`/genre/${el.id}`}>
-        {el.name}
-        </Link>
+        <Link to={`/genre/${el.id}`}>{el.name}</Link>
       </li>
     );
   });
@@ -217,9 +219,9 @@ const API = {
   IMG_URL_CARD: "https://image.tmdb.org/t/p/w200",
   IMG_URL_CARD_500: "https://image.tmdb.org/t/p/w500",
   IMG_URL: "https://image.tmdb.org/t/p/original",
-  DISCOVER: `${BASE_URL}trending/all/DAY?api_key=${KEY}`,
+  DISCOVER: `${BASE_URL}trending/all/DAY?api_key=${KEY}&language=en-US`,
   TRENDING: "trending/all/DAY?api_key=",
-  POPULAR: "movie/popular?api_key=",
+  AIRING: "tv/airing_today?api_key=",
   TOP_RATED: "movie/top_rated?api_key=",
   TV: "tv/popular?api_key=",
   SEARCH_QUERY: `${BASE_URL}search/multi?api_key=${KEY}&query=`,

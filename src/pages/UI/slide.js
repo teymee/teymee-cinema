@@ -29,10 +29,22 @@ function Slide(props) {
 
 
   const responsives= [
+    {
+      breakpoint: 3400,
+      settings: {
+        slidesToShow: 6,
+        speed: 1500,
+        autoplaySpeed: 3800,
+        slidesToScroll: 5,
+        infinite: true,
+        dots: false,
+      },
+    },
+
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3                     ,
           slidesToScroll: 3,
           infinite: true,
           dots: true,
@@ -49,24 +61,68 @@ function Slide(props) {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
     ]
+
+    const responsives2= [
+      {
+      breakpoint: 3400,
+      settings: {
+        slidesToShow: 8,
+        speed: 1500,
+        autoplaySpeed: 4000,
+        slidesToScroll: 5,
+        infinite: true,
+        dots: false,
+      },
+    },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3,
+          speed: 1500,
+          autoplaySpeed: 2500,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          speed: 1200,
+          autoplaySpeed: 1000,
+          dots: false,
+        },
+      },
+    ]
  
-  let responsive = props.component === "cast-list" ? responsives : null;
- 
+  let responsive = props.component === "cast-list" ? responsives : responsives2;
+
   
 
   const settings = {
     infinite: true,
     swipeToSlide: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 1500,
     cssEase: "ease-out",
     adaptiveHeight: true,
     nextArrow: <SampleNextArrow />,
