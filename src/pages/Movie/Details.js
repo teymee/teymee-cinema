@@ -32,7 +32,9 @@ function Details(props) {
 
 
   const title = props.title || " ";
-  const url = API.url(title);
+  const url = API.url1(title);
+  const url2 = API.url2(title);
+  const url3= API.url3(title);
 
   const Runtime_SeasonNumber = (
     <div className="runtime">
@@ -80,7 +82,15 @@ function Details(props) {
           </button>
 
           <a target="_blank" rel="noopener noreferrer" href={url}>
-            <button style={downloadStyle}>Download</button>
+            <button style={downloadStyle}>Download Link 1</button>
+          </a>
+
+          <a target="_blank" rel="noopener noreferrer" href={url2}>
+            <button style={downloadStyle}>Download Link 2</button>
+          </a>
+
+          <a target="_blank" rel="noopener noreferrer" href={url3}>
+            <button style={downloadStyle}>Download Link 3</button>
           </a>
         </div>
       </div>
@@ -106,9 +116,22 @@ function Details(props) {
         <div className="synopsis">
           <h1> SYNOPSIS </h1>
           <p>{props.synopsis}</p>
+          
           <a target="_blank" rel="noopener noreferrer" href={url}>
             <button className="second-button" style={downloadStyle}>
-              Download
+               Download Link 1
+            </button>
+          </a>
+
+          <a target="_blank" rel="noopener noreferrer" href={url2}>
+            <button className="second-button" style={downloadStyle}>
+            Download Link 2
+            </button>
+          </a>
+
+          <a target="_blank" rel="noopener noreferrer" href={url3}>
+            <button className="second-button" style={downloadStyle}>
+               Download Link 3
             </button>
           </a>
         </div>

@@ -40,7 +40,7 @@ function Nav() {
             <Link to="/"> Home </Link>
           </li>
           <li className="item item2">
-            <Link to="/category/trending"> Category </Link>
+            <Link to="/category/airing"> Category </Link>
           </li>
 
           <form onSubmit={onSubmitHandler}>

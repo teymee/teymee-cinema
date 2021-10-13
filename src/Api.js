@@ -19,7 +19,12 @@ const dataCheck = (data, type, category) => {
       return data.backdrop_path !== null;
     });
 
-    const noReality = backdropCheck.filter((item) => {
+    const noGenre = backdropCheck.filter((data) => {
+    
+      return data.genre_ids !== undefined;
+    });
+
+    const noReality = noGenre.filter((item) => {
       return item.genre_ids.indexOf(10764) === -1;
     });
     const noNews = noReality.filter((item) => {
@@ -105,8 +110,22 @@ const dataCheck = (data, type, category) => {
 };
 
 //URL
-const url = (title) => {
+const url1 = (title) => {
+  return `https://www.thenetnaija.com/search?folder=videos&t=${title
+    .replace(/:/g, "")
+    .replace(/'/g, "")
+    .replace(/ /g, "+")}`;
+};
+
+const url2 = (title) => {
   return `https://www.tfp.is/?s=${title
+    .replace(/:/g, "")
+    .replace(/'/g, "")
+    .replace(/ /g, "+")}`;
+};
+
+const url3 = (title) => {
+  return `https://pahe.ph/?s=${title
     .replace(/:/g, "")
     .replace(/'/g, "")
     .replace(/ /g, "+")}`;
@@ -232,7 +251,9 @@ const API = {
   Cost,
   GenreList,
   finalRender,
-  url,
+  url1,
+  url2,
+  url3,
   GENRE: `${BASE_URL}genre/movie/list?api_key=${KEY}&language=en-US`,
 };
 

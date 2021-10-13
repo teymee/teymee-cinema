@@ -1,12 +1,11 @@
 import React from "react";
-import { faTv } from '@fortawesome/free-solid-svg-icons'
-import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { faThumbsUp} from '@fortawesome/free-solid-svg-icons'
-import { Link, useLocation } from "react-router-dom";
+import { faTv } from "@fortawesome/free-solid-svg-icons";
+import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { Link, useLocation,NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Slide from "../UI/slide";
 import "./List.css";
@@ -35,36 +34,54 @@ function Sidebar(props) {
     <div className="side-bar">
       <div className="first-nav">
         <ul>
-          <Link to="/category/trending">
-            <li onClick={props.catNav}>
-            <FontAwesomeIcon icon={faLocationArrow} color="#B2325D" style={{paddingRight:"2px"}} />
-             Trending
-            </li>
-          </Link>
-          
-          <Link to="/category/top_rated">
-         
-            <li onClick={props.catNav}>
-
-            
-         <FontAwesomeIcon icon={faThumbsUp} color="#B2325D" style={{paddingRight:"2px"}} />
-            Top Rated</li>
-            
-          </Link>
-          <Link to="/category/tvseries">
+          <NavLink
+            to="/category/airing"
+            activeClassName= "selected"
+          >
             <li onClick={props.catNav}>
               {" "}
-              <FontAwesomeIcon icon={faTv} color="#B2325D" style={{paddingRight:"2px"}} /> TV series
+              <FontAwesomeIcon
+                icon={faStar}
+                color="#B2325D"
+                style={{ paddingRight: "2px" }}
+              />
+              Airing Today
             </li>
-          </Link>
+          </NavLink>
 
-          <Link to="/category/airing">
+          <NavLink to="/category/trending"  activeClassName= "selected">
+            <li onClick={props.catNav}>
+              <FontAwesomeIcon
+                icon={faLocationArrow}
+                color="#B2325D"
+                style={{ paddingRight: "2px" }}
+              />
+              Trending
+            </li>
+          </NavLink>
+
+          <NavLink to="/category/top_rated"  activeClassName= "selected">
+            <li onClick={props.catNav}>
+              <FontAwesomeIcon
+                icon={faThumbsUp}
+                color="#B2325D"
+                style={{ paddingRight: "2px" }}
+              />
+              Top Rated
+            </li>
+            
+          </NavLink>
+          <NavLink to="/category/tvseries"  activeClassName= "selected">
             <li onClick={props.catNav}>
               {" "}
-              <FontAwesomeIcon icon={faStar} color="#B2325D" style={{paddingRight:"2px"}} />
-             Airing Today
+              <FontAwesomeIcon
+                icon={faTv}
+                color="#B2325D"
+                style={{ paddingRight: "2px" }}
+              />{" "}
+              TV series
             </li>
-          </Link>
+          </NavLink>
         </ul>
       </div>
 

@@ -25,7 +25,7 @@ function Banner(props) {
   const title = API.SLIM_TITLE(bannerData.title || "", 37, 36) ;
  
 
-  const url = API.url(title);
+  const url = API.url2(title);
 
   const style = {
     backgroundImage: `url(${bannerData.backImg})`,

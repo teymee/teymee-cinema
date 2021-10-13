@@ -25,10 +25,11 @@ function Search() {
       let response = await fetch(api);
       let result = await response.json();
       let data = result.results;
+     
       let newData = API.DATA_CHECK(data, "list", "search");
       setPages(result.total_pages);
       setSearch(newData);
-      console.log(`${API.SEARCH_QUERY}${query}&page=${curPage}&include_adult=true`)
+   
 
     }
 
