@@ -19,7 +19,7 @@ function Trailers(props) {
   const content = trailer.map((element) => {
     return (
      <>
-        <Trailer youtube={element.key} title={element.title} key={element.key}/>
+        <Trailer youtube={element.key} title={element.title} key={element.id}/>
      
         </>
      

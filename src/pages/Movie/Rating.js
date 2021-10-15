@@ -49,9 +49,9 @@ const Rating = React.memo((props) => {
   return (
     <div className="rating">
       <ul className="display-container">
-        <li class="note-display" style={ratingStyle} data-note="7.5">
+        <li className="note-display" style={ratingStyle} data-note="7.5">
           <div className="circle">
-            <svg width="84" height="84" class="circle__svg">
+            <svg width="84" height="84" className="circle__svg">
               <circle
                 style={ratingStyle}
                 cx="41"
