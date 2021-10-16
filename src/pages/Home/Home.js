@@ -79,7 +79,7 @@ function Home() {
     genreList = API.GenreList(genres, banner.genre);
     link = banner.firstAirDate !== null ? "/tv/" : "/movie/";
 
-    url = API.url1(title);
+    url = API.url3(title);
     style = {
       backgroundImage: `url('${banner.backImg}')`,
     };

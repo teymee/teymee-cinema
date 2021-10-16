@@ -82,15 +82,15 @@ function Details(props) {
           </button>
 
           <a target="_blank" rel="noopener noreferrer" href={url}>
-            <button style={downloadStyle}>Download Link 1</button>
+            <button style={downloadStyle}>Download with NetNaija</button>
           </a>
 
           <a target="_blank" rel="noopener noreferrer" href={url2}>
-            <button style={downloadStyle}>Download Link 2</button>
+            <button style={downloadStyle}>Download with TFPDL</button>
           </a>
 
           <a target="_blank" rel="noopener noreferrer" href={url3}>
-            <button style={downloadStyle}>Download Link 3</button>
+            <button style={downloadStyle}>Download with Pahe</button>
           </a>
         </div>
       </div>
@@ -119,19 +119,19 @@ function Details(props) {
           
           <a target="_blank" rel="noopener noreferrer" href={url}>
             <button className="second-button" style={downloadStyle}>
-               Download Link 1
+               Download with NetNaija
             </button>
           </a>
 
           <a target="_blank" rel="noopener noreferrer" href={url2}>
             <button className="second-button" style={downloadStyle}>
-            Download Link 2
+            Download with TFPDL
             </button>
           </a>
 
           <a target="_blank" rel="noopener noreferrer" href={url3}>
             <button className="second-button" style={downloadStyle}>
-               Download Link 3
+               Download with Pahe
             </button>
           </a>
         </div>
