@@ -71,7 +71,7 @@
 
 .detail {
   padding-left: 14%;
-  padding-top: 5%;
+  padding-top: 3.3%;
   width: 35%;
 }
 
@@ -690,7 +690,7 @@ p {
 @media only screen and (min-width: 500px) and (max-width: 768px) {
   .detail {
     padding-left: 14%;
-    padding-top: 5%;
+    padding-top: 3.3%;
     width: 45%;
   }
 
